@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Dodawanie filmów</title>
+</head>
+<body>
+<div class="container">
+    <h3>Dodaj film</h3>
+    <hr>
+    <p class="h4 mb-4">Zapisz film</p>
+
+    <form action="#" th:action="@{/managers/films/add}"
+          th:object="${film}" method="post">
+
+        <input type="text" th:field="*{name}"
+               class="form-control mb-4 col-4" placeholder="tytuł"/>
+        <input type="text" th:field="*{lengthMin}"
+               class="form-control mb-4 col-4" placeholder="czas trwania"/>
+        <input type="text" th:field="*{description}"
+               class="form-control mb-4 col-4" placeholder="opis"/>
+        <button type="submit" class="btn btn-info col-2">Zapisz</button>
+    </form>
+    <hr>
+    <a th:href="@{'/managers/films/all'}">Powrót do listy filmów</a>
+</div>
+</body>
+</html>
