@@ -35,8 +35,6 @@ public class RegistrationController {
         if (bindingResult.hasErrors()) {
             return "/registration";
         }
-        // success message
-        redirectAttributes.addFlashAttribute("message", "Successful registration! Verification email has been sent");
 
         userService.saveUser(user);
         return "redirect:/";
