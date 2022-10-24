@@ -22,4 +22,14 @@ public class ScreeningServiceImpl implements ScreeningService {
     public List<Screening> findAll() {
         return screeningRepository.findAll();
     }
+
+    @Override
+    public void saveScreening(Screening screening) {
+        screeningRepository.save(screening);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        screeningRepository.deleteById(id);
+    }
 }

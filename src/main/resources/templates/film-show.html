@@ -13,9 +13,11 @@
 <div class="container">
 <table class="table table-bordered table-striped">
   <thead class="thead-dark">
-  <th>title</th>
-  <th>length</th>
-  <th>description</th>
+  <th>Tytuł</th>
+  <th>Czas trwania</th>
+  <th>Opis fabuły</th>
+  <th>Sala</th>
+  <th>Godziny</th>
   </thead>
   <tbody>
   <tr th:each="film : ${films}" >
@@ -23,6 +25,16 @@
     <td th:text="${film.name}"/>
     <td th:text="${film.lengthMin}"/>
     <td th:text="${film.description}"/>
+    <td>
+      <th:block th:each="room : ${film.rooms}">
+        <p th:value="${room.id}" th:text="${room.roomName}"/>
+      </th:block>
+    </td>
+    <td>
+      <th:block th:each="screening : ${film.screenings}">
+        <p th:value="${screening.id}" th:text="${screening.startTime}"/>
+      </th:block>
+    </td>
   </tr>
   </th:each>
   </tbody>

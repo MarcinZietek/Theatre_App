@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ScreeningService {
     List<Screening> findAll();
+    void saveScreening(Screening screening);
+    void deleteById(Long id);
 }

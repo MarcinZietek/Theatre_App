@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.web_theatre_app_spring.entities.Film;
 import pl.coderslab.web_theatre_app_spring.entities.Room;
+import pl.coderslab.web_theatre_app_spring.entities.Screening;
 import pl.coderslab.web_theatre_app_spring.entities.Seat;
 import pl.coderslab.web_theatre_app_spring.services.FilmServiceImpl;
 import pl.coderslab.web_theatre_app_spring.services.RoomServiceImpl;
@@ -31,15 +32,17 @@ public class CustomerController {
         List<Film> films = filmServiceImpl.findAll();
         List<Room> roomList = filmServiceImpl.getRooms();
         model.addAttribute("films", films);
-        model.addAttribute("roomList", roomList);
+        model.addAttribute("rooms", roomList);
         return "customer-film-list";
     }
 
     @GetMapping("/show/{id}")
     public String showFilm(Model model, @PathVariable long id) {
         List<Room> roomList = filmServiceImpl.getRooms();
+        List<Screening> screeningList = filmServiceImpl.getScreenings();
         model.addAttribute("films", filmServiceImpl.findById(id));
-        model.addAttribute("roomList", roomList);
+        model.addAttribute("rooms", roomList);
+        model.addAttribute("screenings", screeningList);
         return "customer-film-show";
     }
 

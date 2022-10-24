@@ -73,7 +73,11 @@ public class FilmController {
 
     @GetMapping("/show/{id}")
     public String showFilm(Model model, @PathVariable long id) {
+        List<Room> roomList = roomServiceImpl.getRooms();
+        List<Screening> screeningList = screeningServiceImpl.findAll();
         model.addAttribute("films", filmService.findById(id));
+        model.addAttribute("room", roomList);
+        model.addAttribute("screening", screeningList);
         return "film-show";
     }
 }

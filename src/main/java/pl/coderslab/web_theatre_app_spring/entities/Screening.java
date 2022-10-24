@@ -1,9 +1,11 @@
 package pl.coderslab.web_theatre_app_spring.entities;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,8 @@ public class Screening {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Timestamp startTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime startTime;
 
     @OneToMany
     @JoinColumn(name = "screening_id")

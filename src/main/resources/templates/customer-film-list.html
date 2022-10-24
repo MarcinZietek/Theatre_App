@@ -34,6 +34,11 @@
                 </th:block>
             </td>
             <td>
+                <th:block th:each="screening : ${film.getScreenings()}">
+                    <p th:value="${screening.id}" th:text="${screening.startTime}"/>
+                </th:block>
+            </td>
+            <td>
                 <a th:href="@{'/customers/films/show/' + ${film.id}}"
                    class="btn btn-secondary btn-sm">Pokaż</a>
             </td>
