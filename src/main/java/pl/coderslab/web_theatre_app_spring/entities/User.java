@@ -29,6 +29,7 @@ public class User {
     @NotEmpty(message = "*Proszę podać hasło")
     private String password;
     @Transient
+    @NotEmpty(message = "*Pole nie może być puste")
     private String confirmPassword;
     @Email(message = "*Proszę podać poprawny email")
     @NotEmpty(message = "*Proszę podać email")

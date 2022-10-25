@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.web_theatre_app_spring.entities.Film;
 import pl.coderslab.web_theatre_app_spring.entities.Room;
 import pl.coderslab.web_theatre_app_spring.entities.Screening;
-import pl.coderslab.web_theatre_app_spring.entities.Seat;
 import pl.coderslab.web_theatre_app_spring.services.FilmServiceImpl;
 import pl.coderslab.web_theatre_app_spring.services.RoomServiceImpl;
-import pl.coderslab.web_theatre_app_spring.services.SeatServiceImpl;
 
 import java.util.List;
 
