@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +25,9 @@ public class Room {
             inverseJoinColumns = @JoinColumn(name = "screenning_id"))
     private Set<Screening> screenings;
 
-    @OneToMany
-    @JoinColumn(name = "room_id")
-    private List<Seat> seats = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "room_seat",
+        joinColumns = {@JoinColumn(name = "fk_room")},
+        inverseJoinColumns = {@JoinColumn(name = "fk_seat")})
+    private Set<Seat> seats = new HashSet<>();
 }

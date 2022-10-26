@@ -3,6 +3,8 @@ package pl.coderslab.web_theatre_app_spring.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -16,8 +18,7 @@ public class Seat {
     private char rowLetter;
     private int number;
 
-//    @OneToOne
-//    @JoinColumn(name = "seat_id")
-//    private ReservedSeat reservedSeats;
+    @ManyToMany(mappedBy = "seats")
+    private Set<Room> rooms = new HashSet<>();
 
 }

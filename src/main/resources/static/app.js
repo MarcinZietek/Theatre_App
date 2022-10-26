@@ -1,5 +1,3 @@
-const test = document.getElementById('password');
-console.log(test);
 
 function checkPasswordMatch(){
     let password = document.getElementById('password').value;
