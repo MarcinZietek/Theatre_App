@@ -21,6 +21,7 @@ public class UserController {
         User user = new User();
         user.setUsername("admin");
         user.setPassword("admin");
+        user.setConfirmPassword("admin");
         user.setEmail("admin@admin.pl");
         user.setFirstName("Marcin");
         user.setLastName("Ziętek");
