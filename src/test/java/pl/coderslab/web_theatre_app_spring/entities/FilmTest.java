@@ -48,7 +48,7 @@ public class FilmTest {
     }
 
     @Test
-    void testDeleteFilmByTitle(){
+    void testDeleteFilmById(){
         Film film = new Film();
         film.setName("Nowy Film");
         film.setDescription("Nowo dodany film");
